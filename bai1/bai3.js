@@ -1,83 +1,23 @@
 
-// # Bộ bài tập ôn JavaScript cho học viên backend
-
-// ## Phần 1: Cơ bản về biến, kiểu dữ liệu, toán tử
-// 1. Khai báo 3 biến `name`, `age`, `isStudent` và in ra màn hình.
-// 2. Tính tổng, hiệu, tích, thương của hai số `a = 10`, `b = 3`.
-// 3. Kiểm tra số `x` có chia hết cho 2 không (số chẵn/lẻ).
-// 4. Viết chương trình so sánh tuổi 2 người và in ra ai lớn hơn.
-
-// ## Phần 2: Cấu trúc điều kiện & vòng lặp
-// 5. Viết chương trình nhập điểm (0–10) và in ra xếp loại: Giỏi, Khá, Trung bình, Yếu.
-// 6. Viết chương trình in ra bảng cửu chương từ 1 đến 9.
-// 7. Tính tổng các số từ 1 đến 100.
-// 8. Viết chương trình đếm có bao nhiêu số lẻ từ 1 → 50.
-
-// ## Phần 3: Hàm
-// 9. Viết hàm `sum(a, b)` trả về tổng hai số.
-// 10. Viết hàm `isPrime(n)` kiểm tra số nguyên tố.
-// 11. Viết hàm `factorial(n)` tính giai thừa.
-// 12. Viết hàm `reverseString(str)` để đảo ngược một chuỗi.
-
-// ## Phần 4: Mảng
-// 13. Cho mảng `[1, 2, 3, 4, 5]`. Viết code để tính tổng các phần tử.
-// 14. Tìm phần tử lớn nhất trong mảng `[10, 20, 5, 8, 30]`.
-// 15. Viết hàm lọc ra các số chẵn trong mảng.
-// 16. Viết chương trình sắp xếp mảng tăng dần (không dùng `sort`).
-
-// ## Phần 5: Đối tượng & JSON
-// 17. Tạo đối tượng `student` có `name, age, email`. In ra màn hình.
-// 18. Viết hàm nhận vào `student` và in: "Tên: ..., Tuổi: ..."
-// 19. Cho mảng học sinh:
-// [
-//   { name: "Alice", age: 20 },
-//   { name: "Bob", age: 22 },
-//   { name: "Charlie", age: 19 }
-// ]
-// Viết code tìm học sinh lớn tuổi nhất.
-
-// 20. Chuyển đối tượng `{name: "David", age: 21}` thành JSON string (`JSON.stringify`) và ngược lại (`JSON.parse`).
-
-// ## Phần 6: Bài tập tổng hợp
-// 21. Viết chương trình quản lý danh sách học sinh (mảng).
-//    - Thêm học sinh mới.
-//    - Xóa học sinh theo tên.
-//    - In ra danh sách.
-
-// 22. Viết hàm tính tổng điểm của học sinh, với dữ liệu:
-// const student = {
-//   name: "Alice",
-//   scores: [8, 9, 7, 10]
-// };
-
-// 23. Viết hàm sắp xếp danh sách học sinh theo tuổi tăng dần.
-
-// 24. Viết hàm tìm học sinh có điểm trung bình cao nhất từ danh sách.
-
-// 25. Viết chương trình mô phỏng đăng nhập đơn giản:
-//    - Có `username = "admin"`, `password = "1234"`.
-//    - Nhập từ bàn phím (prompt hoặc readline).
-//    - Nếu đúng → in "Đăng nhập thành công", sai → "Sai tài khoản/mật khẩu".
-
-
-// 1
+// 1 Khai báo 3 biến `name`, `age`, `isStudent` và in ra màn hình.
 let name = "Hoàng", age = 19, isStudent = true;
 console.log(name, age, isStudent);
 
-// 2
+// 2 Tính tổng, hiệu, tích, thương của hai số `a = 10`, `b = 3`.
 let a = 10, b = 3;
 console.log("Tổng:", a + b, "Hiệu:", a - b, "Tích:", a * b, "Thương:", a / b);
 
-// 3
+// 3 Kiểm tra số `x` có chia hết cho 2 không (số chẵn/lẻ).
 let x = 5;
 console.log(x % 2 === 0 ? "Chẵn" : "Lẻ");
 
-// 4
+// 4 Viết chương trình so sánh tuổi 2 người và in ra ai lớn hơn.
 let ageA = 20, ageB = 22;
 if (ageA > ageB) console.log("Người A lớn hơn");
 else if (ageA < ageB) console.log("Người B lớn hơn");
 else console.log("Bằng tuổi");
-// 5
+// 5 Viết chương trình nhập điểm (0–10) và in ra xếp loại: Giỏi, Khá, Trung bình, Yếu.
+
 function xepLoai(diem) {
   if (diem < 0 || diem > 10) return "Điểm không hợp lệ";
   if (diem >= 8.5) return "Giỏi";
@@ -104,11 +44,13 @@ let countOdd = 0;
 for (let i = 1; i <= 50; i++) if (i % 2 !== 0) countOdd++;
 console.log("Số lẻ 1..50:", countOdd);
 
-// 9
+// 9. Viết hàm `sum(a, b)` trả về tổng hai số.
+
 const sum = (a, b) => a + b;
 console.log(sum(3, 7));
 
-// 10
+// 10. Viết hàm `isPrime(n)` kiểm tra số nguyên tố.
+
 function isPrime(n) {
   if (n < 2) return false;
   if (n % 2 === 0) return n === 2;
@@ -117,7 +59,8 @@ function isPrime(n) {
 }
 console.log(isPrime(29));
 
-// 11
+// 11. Viết hàm `factorial(n)` tính giai thừa.
+
 function factorial(n) {
   if (n < 0) return NaN;
   let res = 1;
@@ -126,22 +69,26 @@ function factorial(n) {
 }
 console.log(factorial(5));
 
-// 12
+//12. Viết hàm `reverseString(str)` để đảo ngược một chuỗi.
+
 const reverseString = (str) => str.split("").reverse().join("");
 console.log(reverseString("backend"));
 
-// 13
+// 13. Cho mảng `[1, 2, 3, 4, 5]`. Viết code để tính tổng các phần tử.
+
 const arr13 = [1,2,3,4,5];
 const total13 = arr13.reduce((s, v) => s + v, 0);
 console.log(total13);
 
-// 14
+// 14. Tìm phần tử lớn nhất trong mảng `[10, 20, 5, 8, 30]`.
+
 const arr14 = [10, 20, 5, 8, 30];
 let max14 = arr14[0];
 for (const v of arr14) if (v > max14) max14 = v;
 console.log("Max:", max14);
 
-// 15
+// 15. Viết hàm lọc ra các số chẵn trong mảng.
+
 function evenNumbers(arr) { return arr.filter(n => n % 2 === 0); }
 console.log(evenNumbers([1,2,3,4,5,6]));
 
@@ -157,15 +104,24 @@ function sortAsc(arr) {
 }
 console.log(sortAsc([5,3,8,1,2]));
 
-// 17
+// 17. Tạo đối tượng `student` có `name, age, email`. In ra màn hình.
+
 const student = { name: "Alice", age: 20, email: "alice@example.com" };
 console.log(student);
 
-// 18
+// 18. Viết hàm nhận vào `student` và in: "Tên: ..., Tuổi: ..."
+
 function printStudent(s) { console.log(`Tên: ${s.name}, Tuổi: ${s.age}`); }
 printStudent(student);
 
-// 19
+// 19 Cho mảng học sinh:
+// [
+//   { name: "Alice", age: 20 },
+//   { name: "Bob", age: 22 },
+//   { name: "Charlie", age: 19 }
+// ]
+// Viết code tìm học sinh lớn tuổi nhất.
+
 const students19 = [
   { name: "Alice", age: 20 },
   { name: "Bob", age: 22 },
@@ -175,11 +131,89 @@ let oldest = students19[0];
 for (const s of students19) if (s.age > oldest.age) oldest = s;
 console.log("Lớn tuổi nhất:", oldest);
 
-// 20
+// 20. Chuyển đối tượng `{name: "David", age: 21}` thành JSON string (`JSON.stringify`) và ngược lại (`JSON.parse`).
+//JSON (JavaScript Object Notation): định dạng chuỗi văn bản dùng để trao đổi dữ liệu giữa client ↔ server
+
 const david = { name: "David", age: 21 };
 const json = JSON.stringify(david);
 const back = JSON.parse(json);
 console.log(json, back);
 
+// ## Phần 6: Bài tập tổng hợp
+// 21. Viết chương trình quản lý danh sách học sinh (mảng).
+//    - Thêm học sinh mới.
+//    - Xóa học sinh theo tên.
+//    - In ra danh sách.
+let liststudent=[];
+function addStudents(s){
+  liststudent.push(s)
+}
+function removeStudentsByName(name){
+  liststudent=liststudent.filter(s=>s.name!=name)
+}
+function printList() {
+  for(let s of liststudent) console.log(`- ${s.name} (${s.age})`)
+}
+addStudents({name:"An", age:20});
+addStudents({name:"Bình", age:21});
+addStudents({name:"Chi", age:19});
+removeStudentsByName("Bình");
+printList();
+// 22. Viết hàm tính tổng điểm của học sinh, với dữ liệu:
+// const student = {
+//   name: "Alice",
+//   scores: [8, 9, 7, 10]
+// };
+const student22={
+  name: 'Alice',
+  scores:[8,9,7,10]
+}
+function sumage(s){
+  const total22 = student22.scores.reduce((s,v)=>s+v,0)
+  return total22
+}
+console.log(sumage(student22))
+
+// 23. Viết hàm sắp xếp danh sách học sinh theo tuổi tăng dần.
+const students23 = [
+  { name: "Alice", age: 20 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 19 }
+];
+function sortstudent(s){
+  return s.slice().sort((a,b)=>a.age-b.age)
+}
+console.log(sortstudent(students23));
+
+// 24. Viết hàm tìm học sinh có điểm trung bình cao nhất từ danh sách.
+const students24 = [
+  { name: "An", scores: [7, 8, 9] },
+  { name: "Bình", scores: [9, 9, 10] },
+  { name: "Chi", scores: [8, 8, 8] }
+];
+
+function avg(scores) {
+  return scores.reduce((sum, v) => sum + v, 0) / scores.length;
+}
+
+function bestStudent(list) {
+  let best = list[0];
+  let bestAvg = avg(list[0].scores);
+  for (let i = 1; i < list.length; i++) {
+    const a = avg(list[i].scores);
+    if (a > bestAvg) {
+      best = list[i];
+      bestAvg = a;
+    }
+  }
+  return best;
+}
+
+console.log("Điểm TB cao nhất:", bestStudent(students24));
+
+// 25. Viết chương trình mô phỏng đăng nhập đơn giản:
+//    - Có `username = "admin"`, `password = "1234"`.
+//    - Nhập từ bàn phím (prompt hoặc readline).
+//    - Nếu đúng → in "Đăng nhập thành công", sai → "Sai tài khoản/mật khẩu".
 
 
